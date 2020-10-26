@@ -19,7 +19,8 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Simpsons Quotes</h1>
-      <p>Reload for another quote!</p>
+      <p>Press the button to get a simpsons quote!</p><br>
+      <button id="myBtn">Quote it</button>
 
       <div class="content" id="simpsons">
       </div>
@@ -48,12 +49,15 @@ function fetchSimpsonsJSON() {
         <br>
         <p><strong>${simpsons[0].character} says ...</strong></p>
         <p><strong>${simpsons[0].quote}</strong></p>
+        <img src=${simpsons[0].image}></img>
       `;
       document.querySelector('#simpsons').innerHTML = simpsonsHtml;
     });
 }
 
-fetchSimpsonsJSON();
+document.getElementById("myBtn").addEventListener("click", fetchSimpsonsJSON);
+
+// fetchSimpsonsJSON();
 
 
 
